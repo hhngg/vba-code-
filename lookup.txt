@@ -1,0 +1,209 @@
+Sub main()
+Location = "C:\Users\hhng\Desktop\New folder\"
+data_file = "20201006 WPU CAPI Data.xlsx"
+report_file = "Working_nonmarket.xlsx"
+
+'Workbooks.Open (Location & data_file)
+'Workbooks.Open (Location & report_file)
+
+Dim pid As String
+
+For i = 31 To 36
+    pid = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, 2)
+    number_of_column = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, Columns.Count).End(xlToLeft).Column
+    Price = Workbooks(data_file).Worksheets("Noodle stalls").Range("D2:L24")
+
+    If Left(pid, 1) = "(" Then
+        Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+    ElseIf Left(pid, 1) <> "(" Then
+        result = Application.VLookup(pid, Price, 9, False)
+        If IsError(result) Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+        ElseIf result = "" Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+        ElseIf result <> "" Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = result
+        End If
+    End If
+Next i
+
+For i = 48 To 56
+    pid = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, 2)
+    number_of_column = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, Columns.Count).End(xlToLeft).Column
+    Price = Workbooks(data_file).Worksheets("Noodle stalls").Range("D2:L24")
+
+    If Left(pid, 1) = "(" Then
+        Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+    ElseIf Left(pid, 1) <> "(" Then
+        result = Application.VLookup(pid, Price, 9, False)
+        If IsError(result) Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+        ElseIf result = "" Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+        ElseIf result <> "" Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = result
+        End If
+    End If
+Next i
+
+For i = 68 To 75
+    pid = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, 2)
+    number_of_column = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, Columns.Count).End(xlToLeft).Column
+    Price = Workbooks(data_file).Worksheets("Noodle stalls").Range("D2:L24")
+
+    If Left(pid, 1) = "(" Then
+        Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+    ElseIf Left(pid, 1) <> "(" Then
+        result = Application.VLookup(pid, Price, 9, False)
+        If IsError(result) Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+        ElseIf result = "" Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+        ElseIf result <> "" Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = result
+        End If
+    End If
+Next i
+
+For i = 88 To 96
+    pid = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, 2)
+    number_of_column = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, Columns.Count).End(xlToLeft).Column
+    Price = Workbooks(data_file).Worksheets("Noodle shops").Range("D2:L39")
+    
+    If Left(pid, 1) = "(" Then
+        Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+    ElseIf Left(pid, 1) <> "(" Then
+        result = Application.VLookup(pid, Price, 9, False)
+        If IsError(result) Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+        ElseIf result = "" Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+        ElseIf result <> "" Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = result
+        End If
+    End If
+Next i
+
+For i = 111 To 128
+    pid = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, 2)
+    number_of_column = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, Columns.Count).End(xlToLeft).Column
+    Price = Workbooks(data_file).Worksheets("Noodle shops").Range("D2:L39")
+    
+    If Left(pid, 1) = "(" Then
+        Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+    ElseIf Left(pid, 1) <> "(" Then
+        result = Application.VLookup(pid, Price, 9, False)
+        If IsError(result) Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+        ElseIf result = "" Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+        ElseIf result <> "" Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = result
+        End If
+    End If
+Next i
+
+For i = 140 To 157
+    pid = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, 2)
+    number_of_column = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, Columns.Count).End(xlToLeft).Column
+    Price = Workbooks(data_file).Worksheets("Noodle shops").Range("D2:L39")
+    
+    If Left(pid, 1) = "(" Then
+        Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+    ElseIf Left(pid, 1) <> "(" Then
+        result = Application.VLookup(pid, Price, 9, False)
+        If IsError(result) Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+        ElseIf result = "" Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+        ElseIf result <> "" Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = result
+        End If
+    End If
+Next i
+
+For i = 21 To 22
+    pid = Workbooks(report_file).Worksheets("Bread").Cells(i, 2)
+    number_of_column = Workbooks(report_file).Worksheets("Bread").Cells(i, Columns.Count).End(xlToLeft).Column
+    Price = Workbooks(data_file).Worksheets("Bread").Range("D2:L39")
+    
+    If Left(pid, 1) = "(" Then
+        Workbooks(report_file).Worksheets("Bread").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Bread").Cells(i, number_of_column - 6).Value
+    ElseIf Left(pid, 1) <> "(" Then
+        result = Application.VLookup(pid, Price, 9, False)
+        If IsError(result) Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+        ElseIf result = "" Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+        ElseIf result <> "" Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = result
+        End If
+    End If
+Next i
+
+pid = Workbooks(report_file).Worksheets("Bread").Cells(23, 2)
+number_of_column = Workbooks(report_file).Worksheets("Bread").Cells(i, Columns.Count).End(xlToLeft).Column
+Price = Workbooks(data_file).Worksheets("Bread").Range("D2:N39")
+result = Application.WorksheetFunction.VLookup(pid, Price, 9, False)
+unit = Application.WorksheetFunction.VLookup(pid, Price, 11, False)
+Workbooks(report_file).Worksheets("Bread").Cells(i, number_of_column - 4).Value = result / unit
+
+For i = 24 To 25
+    pid = Workbooks(report_file).Worksheets("Bread").Cells(i, 2)
+    number_of_column = Workbooks(report_file).Worksheets("Bread").Cells(i, Columns.Count).End(xlToLeft).Column
+    Price = Workbooks(data_file).Worksheets("Bread").Range("D2:L39")
+    
+    If Left(pid, 1) = "(" Then
+        Workbooks(report_file).Worksheets("Bread").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Bread").Cells(i, number_of_column - 6).Value
+    ElseIf Left(pid, 1) <> "(" Then
+        result = Application.VLookup(pid, Price, 9, False)
+        If IsError(result) Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+        ElseIf result = "" Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+        ElseIf result <> "" Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = result
+        End If
+    End If
+Next i
+
+For i = 35 To 39
+    pid = Workbooks(report_file).Worksheets("Bread").Cells(i, 2)
+    number_of_column = Workbooks(report_file).Worksheets("Bread").Cells(i, Columns.Count).End(xlToLeft).Column
+    Price = Workbooks(data_file).Worksheets("Bread").Range("D2:L39")
+    
+    If Left(pid, 1) = "(" Then
+        Workbooks(report_file).Worksheets("Bread").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Bread").Cells(i, number_of_column - 6).Value
+    ElseIf Left(pid, 1) <> "(" Then
+        result = Application.VLookup(pid, Price, 9, False)
+        If IsError(result) Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+        ElseIf result = "" Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+        ElseIf result <> "" Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = result
+        End If
+    End If
+Next i
+
+For i = 49 To 53
+    pid = Workbooks(report_file).Worksheets("Bread").Cells(i, 2)
+    number_of_column = Workbooks(report_file).Worksheets("Bread").Cells(i, Columns.Count).End(xlToLeft).Column
+    Price = Workbooks(data_file).Worksheets("Bread").Range("D2:L39")
+    
+    If Left(pid, 1) = "(" Then
+        Workbooks(report_file).Worksheets("Bread").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Bread").Cells(i, number_of_column - 6).Value
+    ElseIf Left(pid, 1) <> "(" Then
+        result = Application.VLookup(pid, Price, 9, False)
+        If IsError(result) Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+        ElseIf result = "" Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 6).Value
+        ElseIf result <> "" Then
+            Workbooks(report_file).Worksheets("Noodle stalls & shops").Cells(i, number_of_column - 4).Value = result
+        End If
+    End If
+Next i
+
+MsgBox "Done"
+End Sub
